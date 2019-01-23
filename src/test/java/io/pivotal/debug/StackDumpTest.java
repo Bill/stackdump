@@ -33,7 +33,7 @@ public class StackDumpTest {
 
   @Test
   public void testStackString() {
-    assertThat(asString(a(() -> stack()).limit(4))).contains("io.pivotal.debug.StackDumpTest.lambda$testStackString$0(StackDumpTest.java:36)\n"
+    assertThat(asString(a(() -> stack().limit(4)))).contains("io.pivotal.debug.StackDumpTest.lambda$testStackString$0(StackDumpTest.java:36)\n"
         + "io.pivotal.debug.StackDumpTest.c(StackDumpTest.java:31)\n"
         + "io.pivotal.debug.StackDumpTest.b(StackDumpTest.java:27)\n"
         + "io.pivotal.debug.StackDumpTest.a(StackDumpTest.java:23)");
