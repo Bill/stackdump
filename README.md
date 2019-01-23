@@ -2,13 +2,15 @@
 
 A couple static member functions for making stack traces, usually for debugging, in your Java project.
 
-## Maven Usage
+## Build
 
 Clone this repo and then build+install the package into your local Maven repository with:
 
 ```bash
 mvn install
 ```
+
+## Maven
 
 Add this to your `pom.xml`:
 
@@ -17,8 +19,15 @@ Add this to your `pom.xml`:
   <groupId>io.pivotal.debug</groupId>
   <artifactId>stackdump</artifactId>
   <version>0.1.0</version>
-  <scope>test</scope>
 </dependency>
+```
+
+## Gradle
+
+Add this to your `build.gradle`:
+
+```gradle
+compile('io.pivotal.debug:stackdump:0.1.0')
 ```
 
 ## Generating Stack Traces
