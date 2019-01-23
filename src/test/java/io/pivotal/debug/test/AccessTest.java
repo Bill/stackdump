@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 /**
  * This class won't compile unless methods we expect to be public, are public.
  */
-public class AccessibilityTest {
+public class AccessTest {
 
   @Test
   public void testStackMethodVisible() {
