@@ -32,10 +32,20 @@ compile('io.pivotal.debug:stackdump:0.1.0')
 
 ## Generating Stack Traces
 
-To generate a newline-separated string of stack frames, skipping the nearest one and including the next four:
+To generate a newline-separated string of the first four (nearest four) stack frames use an expression like:
 
 ```java
-asString(a(() -> stack().skip(1).limit(4))))
+asString(a(() -> stack().limit(4))))
+```
+
+Say you've got a logging method you'd like to call from multiple places, but you don't want the frame for the logging method to appear in your output. Easy&mdash;just skip a frame:
+
+```java
+private void logTxClosed() {
+  logger.info("TXState closed txid: {}\n{}",
+      getTransactionId(),
+      StackDump.asString(StackDump.stack().skip(1).limit(8)));
+}
 ```
 
 See the JavaDoc for the `StackDump` class and see the JUnit tests for examples.
